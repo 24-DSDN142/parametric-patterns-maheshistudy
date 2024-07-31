@@ -7,6 +7,8 @@ let drawAStarAtTop = true;
 let drawSnowflakes = true;
 let drawBulbs = true;
 // let treeTopColor = color(23, 156, 41); // Defined inside the drawTree
+let snowflakeWidth = 3;
+let snowflakeHeight = 3;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -105,7 +107,7 @@ function drawStar(x, y, outerRadius, innerRadius) {
 function drawSnowflake(x, y) {
   fill(255, 255, 255);
   stroke(255, 255, 255);
-  ellipse(x, y, 5, 5);  
+  ellipse(x, y, snowflakeWidth, snowflakeHeight);  
   line(x - 4, y, x + 4, y);
   line(x, y - 4, x, y + 4);
   line(x - 2.5, y - 2.5, x + 2.5, y + 2.5);
