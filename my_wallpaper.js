@@ -6,6 +6,7 @@ let treeLayerGap = -15;
 let drawAStarAtTop = true;
 let drawSnowflakes = true;
 let drawBulbs = true;
+// let treeTopColor = color(23, 156, 41); // Defined inside the drawTree
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -29,13 +30,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
 // Draw tree function
 function drawTree(guidePointX, guidePointY) {
-
+  let treeTopColor = color(23, 156, 41);
   // Draw Tree trunk
   fill(54, 35, 22);
   rect(guidePointX-10, guidePointY, 20, 50);
 
   // Set Tree top color
-  fill(23, 156, 41);
+  fill(treeTopColor);
 
   // Draw tree top layer 1
   triangle(guidePointX/2, guidePointY, guidePointX, guidePointY-100, guidePointX+50, guidePointY);
