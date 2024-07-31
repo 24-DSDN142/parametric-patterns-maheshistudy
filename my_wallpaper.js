@@ -5,6 +5,7 @@ let guidePointY = 150;
 let treeLayerGap = -15;
 let drawAStarAtTop = true;
 let drawSnowflakes = true;
+let drawBulbs = true;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -71,6 +72,17 @@ function drawTree(guidePointX, guidePointY) {
     drawSnowflake(guidePointX + 14, guidePointY + 20);
     drawSnowflake(guidePointX + 25, guidePointY + 25);
   }
+
+  // Draw bulbs on the tree on multiple positions with different colors if enabled
+  if (drawBulbs) {
+    drawGlowingBulb(guidePointX + 10, guidePointY - 30, 4, color(255, 255, 255));
+    drawGlowingBulb(guidePointX + 20, guidePointY - 40, 4, color(219, 247, 79));
+    drawGlowingBulb(guidePointX - 20, guidePointY - 30, 4, color(247, 90, 79));
+    drawGlowingBulb(guidePointX - 30, guidePointY + 10, 4, color(79, 185, 247));
+    drawGlowingBulb(guidePointX + 35, guidePointY + 20, 4, color(255, 255, 255));
+    drawGlowingBulb(guidePointX + 10, guidePointY + 15, 4, color(79, 185, 247));
+    drawGlowingBulb(guidePointX - 35, guidePointY + 20, 4, color(219, 247, 79));
+  }
 }
 
 // Draw star function using custom shapes
@@ -97,5 +109,23 @@ function drawSnowflake(x, y) {
   line(x, y - 4, x, y + 4);
   line(x - 2.5, y - 2.5, x + 2.5, y + 2.5);
   line(x - 2.5, y + 2.5, x + 2.5, y - 2.5);
+}
+
+// Draw glowing bulbs function
+function drawGlowingBulb(positionX, positionY, bulbRadius, bulbColor) {
+  noStroke();
+  // Extract red, gree, blue values from the original bulb color
+  let redValue = red(bulbColor);
+  let greenValue = green(bulbColor);
+  let blueValue = blue(bulbColor);
+  // Drawing the glow around the bulb using ellipse with different alpha values
+  // This loop draw multiple ellipse around the bulb with different alpha values and same color
+  for (let glowRadius = 1; glowRadius < bulbRadius * 3; glowRadius++) {
+    fill(redValue, greenValue, blueValue, glowRadius * 3);
+    ellipse(positionX, positionY, glowRadius);
+  }
+  // Drawing the bulb
+  fill(bulbColor);
+  ellipse(positionX, positionY, bulbRadius);
 }
 
