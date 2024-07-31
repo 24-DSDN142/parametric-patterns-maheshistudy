@@ -4,6 +4,7 @@ let guidePointX = 100;
 let guidePointY = 150;
 let treeLayerGap = -15;
 let drawAStarAtTop = true;
+let drawSnowflakes = true;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -51,6 +52,25 @@ function drawTree(guidePointX, guidePointY) {
     fill(247, 247, 62);
     drawStar(guidePointX, guidePointY-100, 2, 5);
   }
+
+  // Draw snowflakes on the tree on multiple positions if enabled
+  if (drawSnowflakes) {
+    drawSnowflake(guidePointX, guidePointY - 80);
+    drawSnowflake(guidePointX - 7, guidePointY - 70);
+    drawSnowflake(guidePointX + 8, guidePointY - 50);
+    drawSnowflake(guidePointX - 10, guidePointY - 40);
+    drawSnowflake(guidePointX + 10, guidePointY - 20);
+    drawSnowflake(guidePointX - 30, guidePointY - 20);
+    drawSnowflake(guidePointX - 40, guidePointY - 10);
+    drawSnowflake(guidePointX + 40, guidePointY - 12);
+    drawSnowflake(guidePointX - 30, guidePointY - 2);
+    drawSnowflake(guidePointX + 30, guidePointY + 10);
+    drawSnowflake(guidePointX - 20, guidePointY + 20);
+    drawSnowflake(guidePointX - 14, guidePointY + 35);
+    drawSnowflake(guidePointX - 14, guidePointY + 10);
+    drawSnowflake(guidePointX + 14, guidePointY + 20);
+    drawSnowflake(guidePointX + 25, guidePointY + 25);
+  }
 }
 
 // Draw star function using custom shapes
@@ -66,5 +86,16 @@ function drawStar(x, y, outerRadius, innerRadius) {
     vertex(x - outerRadius, y);              // Left
     vertex(x - innerRadius, y - innerRadius); // Upper left
   endShape(CLOSE);
+}
+
+// Draw snowfakes function
+function drawSnowflake(x, y) {
+  fill(255, 255, 255);
+  stroke(255, 255, 255);
+  ellipse(x, y, 5, 5);  
+  line(x - 4, y, x + 4, y);
+  line(x, y - 4, x, y + 4);
+  line(x - 2.5, y - 2.5, x + 2.5, y + 2.5);
+  line(x - 2.5, y + 2.5, x + 2.5, y - 2.5);
 }
 
