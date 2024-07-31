@@ -3,6 +3,7 @@
 let guidePointX = 100;
 let guidePointY = 150;
 let treeLayerGap = -15;
+let drawAStarAtTop = true;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -45,6 +46,25 @@ function drawTree(guidePointX, guidePointY) {
   translate(0, treeLayerGap);
   triangle(guidePointX/2, guidePointY, guidePointX, guidePointY-100, guidePointX+50, guidePointY);
 
+  // Draw a star on top of the tree
+  if(drawAStarAtTop) {
+    fill(247, 247, 62);
+    drawStar(guidePointX, guidePointY-100, 2, 5);
+  }
 }
 
+// Draw star function using custom shapes
+function drawStar(x, y, outerRadius, innerRadius) {
+  beginShape();
+    // Manually defining the points for a star
+    vertex(x, y - outerRadius);              // Top point
+    vertex(x + innerRadius, y - innerRadius); // Upper right
+    vertex(x + outerRadius, y);              // Right
+    vertex(x + innerRadius, y + innerRadius); // Bottom right
+    vertex(x, y + outerRadius);              // Bottom
+    vertex(x - innerRadius, y + innerRadius); // Bottom left
+    vertex(x - outerRadius, y);              // Left
+    vertex(x - innerRadius, y - innerRadius); // Upper left
+  endShape(CLOSE);
+}
 
