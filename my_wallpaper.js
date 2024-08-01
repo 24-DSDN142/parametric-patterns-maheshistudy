@@ -1,7 +1,7 @@
 // your parameter variables go here!
 let drawAStarAtTop = true;  // if draw a star at the top of the tree
-let drawSnowflakes = false;  // if draw snowflakes on the tree
-let drawBulbs = false;  // if draw bulbs on the tree
+let drawSnowflakes = true;  // if draw snowflakes on the tree
+let drawBulbs = true;  // if draw bulbs on the tree
 let addGiftBox = false; // if draw gift boxes on the background
 let addCherry = false;  // if draw cherries on the background
 let snowflakeWidth = 5; // snowflake width
@@ -29,7 +29,7 @@ function wallpaper_background() {
   let coolblue = color(139, 193, 232);
   let purple = color(108, 32, 189);
   let magenta = color(115, 6, 82);
-  background(lightpink); // lightpink background
+  background(purple); // purple background
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
