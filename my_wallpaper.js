@@ -2,8 +2,8 @@
 let drawAStarAtTop = true;  // if draw a star at the top of the tree
 let drawSnowflakes = false;  // if draw snowflakes on the tree
 let drawBulbs = false;  // if draw bulbs on the tree
-let addGiftBox = true; // if draw gift boxes on the background
-let addCherry = false;  // if draw cherries on the background
+let addGiftBox = false; // if draw gift boxes on the background
+let addCherry = true;  // if draw cherries on the background
 let snowflakeWidth = 5; // snowflake width
 let snowflakeHeight = 5;  // snoflake height
 
@@ -29,7 +29,7 @@ function wallpaper_background() {
   let coolblue = color(139, 193, 232);
   let purple = color(108, 32, 189);
   let magenta = color(115, 6, 82);
-  background(honeydewGreen); // honeydewGreen background
+  background(darkGreen); // darkGreen background
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
