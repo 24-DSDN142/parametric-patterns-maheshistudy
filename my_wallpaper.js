@@ -1,15 +1,15 @@
 // your parameter variables go here!
-let drawAStarAtTop = false;  // if draw a star at the top of the tree
-let drawSnowflakes = false;  // if draw snowflakes on the tree
-let drawBulbs = false;  // if draw bulbs on the tree
-let addGiftBox = false; // if draw gift boxes on the background
+let drawAStarAtTop = true;  // if draw a star at the top of the tree
+let drawSnowflakes = true;  // if draw snowflakes on the tree
+let drawBulbs = true;  // if draw bulbs on the tree
+let addGiftBox = true; // if draw gift boxes on the background
 let addCherry = true;  // if draw cherries on the background
 let snowflakeWidth = 5; // snowflake width
 let snowflakeHeight = 5;  // snoflake height
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   // Grid settings
@@ -29,7 +29,7 @@ function wallpaper_background() {
   let coolblue = color(139, 193, 232);
   let purple = color(108, 32, 189);
   let magenta = color(115, 6, 82);
-  background(coolblue); // coolblue background
+  background(darkBlue); // darkBlue background
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
