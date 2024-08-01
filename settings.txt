@@ -9,46 +9,80 @@ Your final settings.txt will look something like this when you are finished:
 
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+// your parameter variables go here!
+let drawAStarAtTop = true;  // if draw a star at the top of the tree
+let drawSnowflakes = true;  // if draw snowflakes on the tree
+let drawBulbs = true;  // if draw bulbs on the tree
+let addGiftBox = true; // if draw gift boxes on the background
+let addCherry = true;  // if draw cherries on the background
+let snowflakeWidth = 5; // snowflake width
+let snowflakeHeight = 5;  // snoflake height
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  // Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 0;
 }
+
+// Set the wallpaper background color
+function wallpaper_background() {
+  let darkBlue = color(1, 25, 64);
+  let honeydewGreen = color(240, 255, 240);
+  let darkGreen = color(9, 46, 9);
+  let white = color(245, 247, 247);
+  let lightpink = color(245, 223, 220);
+  let yellow = color(240, 203, 70);
+  let coolblue = color(139, 193, 232);
+  let purple = color(108, 32, 189);
+  let magenta = color(115, 6, 82);
+  background(darkBlue); // darkblue background
+}
+
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
-}
+/////////////////////////////////
+
+Wallpaper 3:
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+/////////////////////////////////
+
+Wallpaper 5:
+
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+
+/////////////////////////////////
+
+Wallpaper 9:
+
+
+/////////////////////////////////
+
+Wallpaper final:

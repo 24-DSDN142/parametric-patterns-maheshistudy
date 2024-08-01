@@ -1,6 +1,4 @@
 // your parameter variables go here!
-let guidePointX = 100;  // guide point for all the objects x cordinate
-let guidePointY = 150;  // guide point for all the objects y cordinate
 let drawAStarAtTop = true;  // if draw a star at the top of the tree
 let drawSnowflakes = true;  // if draw snowflakes on the tree
 let drawBulbs = true;  // if draw bulbs on the tree
@@ -22,8 +20,8 @@ function setup_wallpaper(pWallpaper) {
 
 // Set the wallpaper background color
 function wallpaper_background() {
-  let honeydewGreen = color(240, 255, 240);
   let darkBlue = color(1, 25, 64);
+  let honeydewGreen = color(240, 255, 240);
   let darkGreen = color(9, 46, 9);
   let white = color(245, 247, 247);
   let lightpink = color(245, 223, 220);
@@ -31,10 +29,12 @@ function wallpaper_background() {
   let coolblue = color(139, 193, 232);
   let purple = color(108, 32, 189);
   let magenta = color(115, 6, 82);
-  background(magenta); // light honeydew green colour
+  background(darkBlue); // darkblue background
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+  let guidePointX = 100;  // guide point for all the objects x cordinate
+  let guidePointY = 150;  // guide point for all the objects y cordinate
   // Draw the main xmas tree
   drawTree(guidePointX, guidePointY);
 
